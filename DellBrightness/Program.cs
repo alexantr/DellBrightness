@@ -58,6 +58,7 @@ namespace DellBrightness
                     new MenuItem("30%", (s, e) => { SetBrightness("30"); }),
                     new MenuItem("40%", (s, e) => { SetBrightness("40"); }),
                     new MenuItem("50%", (s, e) => { SetBrightness("50"); }),
+                    new MenuItem("75%", (s, e) => { SetBrightness("75"); }),
                     new MenuItem("100%", (s, e) => { SetBrightness("100"); })
                 });
             }
