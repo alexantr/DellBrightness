@@ -48,6 +48,17 @@ namespace DellBrightness
 
             if (File.Exists(ddmPath))
             {
+                MenuItem more = new MenuItem("More...");
+                more.MenuItems.AddRange(new MenuItem[] {
+                    new MenuItem("50%", (s, e) => { SetBrightness("50"); }),
+                    new MenuItem("60%", (s, e) => { SetBrightness("60"); }),
+                    new MenuItem("70%", (s, e) => { SetBrightness("70"); }),
+                    new MenuItem("80%", (s, e) => { SetBrightness("80"); }),
+                    new MenuItem("90%", (s, e) => { SetBrightness("90"); }),
+                    new MenuItem("100%", (s, e) => { SetBrightness("100"); }),
+                    more
+                });
+
                 trayIcon.ContextMenu.MenuItems.AddRange(new MenuItem[] {
                     new MenuItem("0%", (s, e) => { SetBrightness("0"); }),
                     new MenuItem("5%", (s, e) => { SetBrightness("5"); }),
@@ -56,10 +67,10 @@ namespace DellBrightness
                     new MenuItem("20%", (s, e) => { SetBrightness("20"); }),
                     new MenuItem("25%", (s, e) => { SetBrightness("25"); }),
                     new MenuItem("30%", (s, e) => { SetBrightness("30"); }),
+                    new MenuItem("35%", (s, e) => { SetBrightness("35"); }),
                     new MenuItem("40%", (s, e) => { SetBrightness("40"); }),
-                    new MenuItem("50%", (s, e) => { SetBrightness("50"); }),
-                    new MenuItem("75%", (s, e) => { SetBrightness("75"); }),
-                    new MenuItem("100%", (s, e) => { SetBrightness("100"); })
+                    new MenuItem("45%", (s, e) => { SetBrightness("45"); }),
+                    more
                 });
             }
             else
