@@ -50,6 +50,7 @@ namespace DellBrightness
             {
                 MenuItem more = new MenuItem("More...");
                 more.MenuItems.AddRange(new MenuItem[] {
+                    new MenuItem("45%", (s, e) => { SetBrightness("45"); }),
                     new MenuItem("50%", (s, e) => { SetBrightness("50"); }),
                     new MenuItem("60%", (s, e) => { SetBrightness("60"); }),
                     new MenuItem("70%", (s, e) => { SetBrightness("70"); }),
@@ -61,6 +62,7 @@ namespace DellBrightness
 
                 trayIcon.ContextMenu.MenuItems.AddRange(new MenuItem[] {
                     new MenuItem("0%", (s, e) => { SetBrightness("0"); }),
+                    new MenuItem("2%", (s, e) => { SetBrightness("2"); }),
                     new MenuItem("5%", (s, e) => { SetBrightness("5"); }),
                     new MenuItem("10%", (s, e) => { SetBrightness("10"); }),
                     new MenuItem("15%", (s, e) => { SetBrightness("15"); }),
@@ -69,7 +71,6 @@ namespace DellBrightness
                     new MenuItem("30%", (s, e) => { SetBrightness("30"); }),
                     new MenuItem("35%", (s, e) => { SetBrightness("35"); }),
                     new MenuItem("40%", (s, e) => { SetBrightness("40"); }),
-                    new MenuItem("45%", (s, e) => { SetBrightness("45"); }),
                     more
                 });
             }
