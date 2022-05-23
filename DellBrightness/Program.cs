@@ -4,7 +4,6 @@ using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
-using System.Management;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -50,12 +49,15 @@ namespace DellBrightness
             {
                 MenuItem more = new MenuItem("More...");
                 more.MenuItems.AddRange(new MenuItem[] {
-                    new MenuItem("45%", (s, e) => { SetBrightness("45"); }),
-                    new MenuItem("50%", (s, e) => { SetBrightness("50"); }),
+                    new MenuItem("55%", (s, e) => { SetBrightness("55"); }),
                     new MenuItem("60%", (s, e) => { SetBrightness("60"); }),
+                    new MenuItem("65%", (s, e) => { SetBrightness("65"); }),
                     new MenuItem("70%", (s, e) => { SetBrightness("70"); }),
+                    new MenuItem("75%", (s, e) => { SetBrightness("75"); }),
                     new MenuItem("80%", (s, e) => { SetBrightness("80"); }),
+                    new MenuItem("85%", (s, e) => { SetBrightness("85"); }),
                     new MenuItem("90%", (s, e) => { SetBrightness("90"); }),
+                    new MenuItem("95%", (s, e) => { SetBrightness("95"); }),
                     new MenuItem("100%", (s, e) => { SetBrightness("100"); }),
                     more
                 });
@@ -71,6 +73,8 @@ namespace DellBrightness
                     new MenuItem("30%", (s, e) => { SetBrightness("30"); }),
                     new MenuItem("35%", (s, e) => { SetBrightness("35"); }),
                     new MenuItem("40%", (s, e) => { SetBrightness("40"); }),
+                    new MenuItem("45%", (s, e) => { SetBrightness("45"); }),
+                    new MenuItem("50%", (s, e) => { SetBrightness("50"); }),
                     more
                 });
             }
