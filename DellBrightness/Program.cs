@@ -35,6 +35,7 @@ namespace DellBrightness
     public class AppContext : ApplicationContext
     {
         private readonly string ddmPath = "C:\\Program Files (x86)\\Dell\\Dell Display Manager\\ddm.exe";
+        private readonly string ddm2Path = "C:\\Program Files\\Dell\\Dell Display Manager 2\\DDM.exe";
 
         public AppContext()
         {
@@ -45,7 +46,7 @@ namespace DellBrightness
                 ContextMenu = new ContextMenu()
             };
 
-            if (File.Exists(ddmPath))
+            if (File.Exists(ddmPath) || File.Exists(ddm2Path))
             {
                 MenuItem more = new MenuItem("More...");
                 more.MenuItems.AddRange(new MenuItem[] {
@@ -123,12 +124,28 @@ namespace DellBrightness
 
         private void SetBrightness(string brightness)
         {
+            string fileName, arguments;
+            if (File.Exists(ddm2Path))
+            {
+                fileName = ddm2Path;
+                arguments = "/WriteBrightnessLevel " + brightness;
+            }
+            else if (File.Exists(ddmPath))
+            {
+                fileName = ddmPath;
+                arguments = "/SetBrightnessLevel " + brightness;
+            }
+            else
+            {
+                return;
+            }
+
             Process process = new Process()
             {
                 StartInfo = new ProcessStartInfo
                 {
-                    FileName = ddmPath,
-                    Arguments = "/SetBrightnessLevel " + brightness,
+                    FileName = fileName,
+                    Arguments = arguments,
                     //CreateNoWindow = true,
                     //UseShellExecute = false,
                     WindowStyle = ProcessWindowStyle.Hidden
